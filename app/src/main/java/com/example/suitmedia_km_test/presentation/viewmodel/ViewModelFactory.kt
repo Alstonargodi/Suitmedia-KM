@@ -7,6 +7,7 @@ import com.example.suitmedia_km_test.data.repository.MainRepository
 import com.example.suitmedia_km_test.injection.Injection
 import com.example.suitmedia_km_test.presentation.first.FirstScreenViewModel
 import com.example.suitmedia_km_test.presentation.second.SecondScreenViewModel
+import com.example.suitmedia_km_test.presentation.third.ThirdScreenViewModel
 
 class ViewModelFactory private constructor(
     private val repository: MainRepository
@@ -32,6 +33,8 @@ class ViewModelFactory private constructor(
            return FirstScreenViewModel(repository) as T
        }else if (modelClass.isAssignableFrom(SecondScreenViewModel::class.java)){
            return SecondScreenViewModel(repository) as T
+       }else if (modelClass.isAssignableFrom(ThirdScreenViewModel::class.java)) {
+           return ThirdScreenViewModel(repository) as T
        }
         throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
     }
