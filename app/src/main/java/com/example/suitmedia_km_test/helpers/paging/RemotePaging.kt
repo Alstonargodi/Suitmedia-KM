@@ -1,4 +1,4 @@
-package com.example.suitmedia_km_test.helpers
+package com.example.suitmedia_km_test.helpers.paging
 
 import android.util.Log
 import androidx.paging.PagingSource
@@ -22,7 +22,7 @@ class RemotePaging(private val apiService: ApiService): PagingSource<Int,Data>()
 
             Log.d("paging","$position ${params.loadSize}")
             LoadResult.Page(
-                data = responseData.data,
+                data = responseData.data.distinct(),
                 prevKey = if (position == initialIndex) null else position - 1,
                 nextKey = if (responseData.data.isNullOrEmpty()) null else position + 1
             )

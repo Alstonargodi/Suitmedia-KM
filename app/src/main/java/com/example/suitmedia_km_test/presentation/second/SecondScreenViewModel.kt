@@ -7,7 +7,7 @@ import com.example.suitmedia_km_test.data.local.entity.user.User
 import com.example.suitmedia_km_test.data.repository.MainRepository
 
 class SecondScreenViewModel(private val repository: MainRepository): ViewModel() {
-    fun readUserName(data : User): LiveData<User> =
+    fun readUserName(): LiveData<User> =
         repository.readUserName()
 
     fun readNameTaken():LiveData<NameTaken> =

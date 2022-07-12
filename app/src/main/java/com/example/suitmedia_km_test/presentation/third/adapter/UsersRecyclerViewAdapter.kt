@@ -18,6 +18,7 @@ class UsersRecyclerViewAdapter(): PagingDataAdapter<Data,UsersRecyclerViewAdapte
 
             Glide.with(binding.root)
                 .load(item.avatar)
+                .circleCrop()
                 .into(binding.itemcardPic)
         }
     }
@@ -35,7 +36,7 @@ class UsersRecyclerViewAdapter(): PagingDataAdapter<Data,UsersRecyclerViewAdapte
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Data>() {
             override fun areItemsTheSame(oldItem: Data, newItem: Data): Boolean {
-                return oldItem.id == newItem.id
+                return newItem.id == oldItem.id
             }
 
             override fun areContentsTheSame(oldItem: Data, newItem: Data): Boolean {

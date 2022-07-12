@@ -9,9 +9,8 @@ import com.example.suitmedia_km_test.data.local.database.LocalDatabase
 import com.example.suitmedia_km_test.data.local.entity.user.NameTaken
 import com.example.suitmedia_km_test.data.local.entity.user.User
 import com.example.suitmedia_km_test.data.remote.Data
-import com.example.suitmedia_km_test.data.remote.UsersResponse
 import com.example.suitmedia_km_test.data.remote.service.ApiService
-import com.example.suitmedia_km_test.helpers.RemotePaging
+import com.example.suitmedia_km_test.helpers.paging.RemotePaging
 import java.util.concurrent.Executors
 
 class MainRepository(
