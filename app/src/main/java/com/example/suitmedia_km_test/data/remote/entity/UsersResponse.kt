@@ -3,7 +3,7 @@ package com.example.suitmedia_km_test.data.remote
 
 import com.google.gson.annotations.SerializedName
 
-data class Users(
+data class UsersResponse(
  @SerializedName("data")
  val `data`: List<Data>,
  @SerializedName("page")
