@@ -44,7 +44,7 @@ For logs HTTP request and response data
 |palindrome checker  | <img src="https://cdn.discordapp.com/attachments/989692317172641832/996641673000005662/Screenshot_20220713_114752.png" alt="drawing" width="250" height="500"/> |
 |Second page after login  | <img src="https://cdn.discordapp.com/attachments/989692317172641832/996641673448792164/Screenshot_20220713_114804.png" alt="drawing" width="250" height="500"/>|
 |Table view of Users  | <img src="https://cdn.discordapp.com/attachments/989692317172641832/996641673721413693/Screenshot_20220713_115141.png" alt="drawing" width="250" height="500"/> |
-|When a User on an item list is clicked, the Selected User Name label in “Second Screen” will be replaced by the selected User’s name  | <img src="https://cdn.discordapp.com/attachments/989692317172641832/996645215572078592/Screenshot_20220713_115150.png" alt="drawing" width="250" height="500"/>
+|When a User on an item list is clicked, the Selected User Name label in “Second Screen” will be replaced by the selected User’s name  | <img src="https://cdn.discordapp.com/attachments/989692317172641832/996645215572078592/Screenshot_20220713_115150.png" alt="drawing" width="300" height="500"/>
  
 
 
