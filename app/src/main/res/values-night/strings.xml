@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Suitmedia-KM-test</string>
     <string name="photoProfile">photoProfileFirst</string>
     <string name="Chekckusername">Check</string>
     <string name="Palindrome">Palindrome</string>
@@ -7,7 +7,7 @@
     <string name="Next">Next</string>
     <string name="buttonBacktoLogin">buttonBacktoLogin</string>
     <string name="SecondScreen">Second Screen</string>
-    <string name="chooseUser">choose a user</string>
+    <string name="chooseUser">choose user</string>
     <string name="Selectedusername">Selected user name</string>
     <string name="welcome">Welcome</string>
     <string name="usertitle">User</string>
