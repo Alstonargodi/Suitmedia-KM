@@ -1,7 +1,11 @@
 package com.example.suitmedia_km_test.data.remote
 
 
+import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class UsersResponse(
  @SerializedName("data")
@@ -18,18 +22,21 @@ data class UsersResponse(
  val totalPages: Int
 )
 
+@Entity(tableName = "UsersTable")
+@Parcelize
 data class Data(
+ @PrimaryKey
+ @SerializedName("id")
+ val id: Int,
  @SerializedName("avatar")
  val avatar: String,
  @SerializedName("email")
  val email: String,
  @SerializedName("first_name")
  val firstName: String,
- @SerializedName("id")
- val id: Int,
  @SerializedName("last_name")
  val lastName: String
-)
+):Parcelable
 
 data class Support(
  @SerializedName("text")
