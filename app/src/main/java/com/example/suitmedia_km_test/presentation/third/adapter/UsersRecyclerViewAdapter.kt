@@ -11,9 +11,16 @@ import com.example.suitmedia_km_test.data.remote.UsersResponse
 import com.example.suitmedia_km_test.databinding.ItemcardUsersBinding
 
 class UsersRecyclerViewAdapter(): PagingDataAdapter<Data,UsersRecyclerViewAdapter.ViewHolder>(DIFF_CALLBACK) {
-    class ViewHolder(private var binding: ItemcardUsersBinding): RecyclerView.ViewHolder(binding.root) {
+
+    private lateinit var detailCallback : OnDetailCallback
+
+    fun onItemClickDetail(detailCallback: OnDetailCallback){
+        this.detailCallback = detailCallback
+    }
+
+    class ViewHolder(var binding: ItemcardUsersBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item : Data){
-            binding.itemcardName.text = item.firstName + item.lastName
+            binding.itemcardName.text = "${item.firstName} ${item.lastName}"
             binding.itemcardEmail.text = item.email
 
             Glide.with(binding.root)
@@ -21,6 +28,7 @@ class UsersRecyclerViewAdapter(): PagingDataAdapter<Data,UsersRecyclerViewAdapte
                 .circleCrop()
                 .into(binding.itemcardPic)
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
@@ -30,6 +38,10 @@ class UsersRecyclerViewAdapter(): PagingDataAdapter<Data,UsersRecyclerViewAdapte
         val item = getItem(position)
         if (item != null){
             holder.bind(item)
+            holder.binding.cardviewUser.setOnClickListener {
+                val name = "${item.firstName} ${item.lastName}"
+                detailCallback.onDetailCallBack(name)
+            }
         }
     }
 
@@ -45,5 +57,8 @@ class UsersRecyclerViewAdapter(): PagingDataAdapter<Data,UsersRecyclerViewAdapte
         }
     }
 
+    interface OnDetailCallback{
+        fun onDetailCallBack(name : String)
+    }
 
 }

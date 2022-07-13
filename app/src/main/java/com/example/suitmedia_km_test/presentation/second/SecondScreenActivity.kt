@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.example.suitmedia_km_test.R
 import com.example.suitmedia_km_test.databinding.ActivitySecondScreenBinding
 import com.example.suitmedia_km_test.presentation.third.ThirdScreenActivity
 import com.example.suitmedia_km_test.presentation.viewmodel.ViewModelFactory
@@ -20,13 +19,23 @@ class SecondScreenActivity : AppCompatActivity() {
         binding.btnChooseUser.setOnClickListener {
             startActivity(Intent(this,ThirdScreenActivity::class.java))
         }
-
-        showUser()
+        showCurrentUser()
+        showUserTaken()
     }
 
-    private fun showUser(){
+    private fun showCurrentUser(){
         viewModel.readUserName().observe(this){ respon ->
             binding.tvSecondUsername.text = respon.name
+        }
+    }
+
+    private fun showUserTaken(){
+        viewModel.readNameTaken().observe(this){ data ->
+            if(data == null){
+
+            }else{
+                binding.tvSecondSelecteduser.text = data.name
+            }
         }
     }
 }

@@ -1,13 +1,16 @@
 package com.example.suitmedia_km_test.presentation.third
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.suitmedia_km_test.R
+import com.example.suitmedia_km_test.data.local.entity.user.NameTaken
 import com.example.suitmedia_km_test.databinding.ActivityThirdScreenBinding
 import com.example.suitmedia_km_test.helpers.paging.LoadingStateAdapter
+import com.example.suitmedia_km_test.presentation.second.SecondScreenActivity
 import com.example.suitmedia_km_test.presentation.third.adapter.UsersRecyclerViewAdapter
 import com.example.suitmedia_km_test.presentation.viewmodel.ViewModelFactory
 import kotlinx.coroutines.launch
@@ -21,14 +24,11 @@ class ThirdScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityThirdScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         showUserList()
-
         binding.swipeRefreshThrid.setOnRefreshListener {
             showUserList()
         }
     }
-
 
     private fun showUserList(){
         viewModel.getUsersList().observe(this){response->
@@ -42,6 +42,12 @@ class ThirdScreenActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 adapter.submitData(response)
             }
+            adapter.onItemClickDetail(object : UsersRecyclerViewAdapter.OnDetailCallback{
+                override fun onDetailCallBack(name: String) {
+                    viewModel.saveNameTaken(NameTaken(0,name))
+                    startActivity(Intent(this@ThirdScreenActivity,SecondScreenActivity::class.java))
+                }
+            })
         }
     }
 }
