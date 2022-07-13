@@ -9,6 +9,7 @@ import com.example.suitmedia_km_test.presentation.first.FirstScreenViewModel
 import com.example.suitmedia_km_test.presentation.second.SecondScreenViewModel
 import com.example.suitmedia_km_test.presentation.third.ThirdScreenViewModel
 
+@Suppress("UNCHECKED_CAST")
 class ViewModelFactory private constructor(
     private val repository: MainRepository
 ): ViewModelProvider.Factory{

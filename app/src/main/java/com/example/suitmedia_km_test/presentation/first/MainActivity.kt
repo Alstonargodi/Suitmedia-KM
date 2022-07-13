@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity() {
                 setPositiveButton("yes") { _, _ ->
                     if (!empty){
                         goToSecondScreen()
+                        saveUserName()
                     }
                 }
                 setNegativeButton("no") { dialog, _ ->

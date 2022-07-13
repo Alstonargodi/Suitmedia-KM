@@ -7,10 +7,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.suitmedia_km_test.data.remote.Data
-import com.example.suitmedia_km_test.data.remote.UsersResponse
 import com.example.suitmedia_km_test.databinding.ItemcardUsersBinding
 
-class UsersRecyclerViewAdapter(): PagingDataAdapter<Data,UsersRecyclerViewAdapter.ViewHolder>(DIFF_CALLBACK) {
+class UsersRecyclerViewAdapter : PagingDataAdapter<Data,UsersRecyclerViewAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     private lateinit var detailCallback : OnDetailCallback
 

@@ -1,12 +1,10 @@
 package com.example.suitmedia_km_test
 
 import android.app.Activity
-import androidx.recyclerview.widget.RecyclerView
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.*
-import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.RootMatchers.isDialog
@@ -15,7 +13,6 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.filters.LargeTest
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import androidx.test.runner.lifecycle.ActivityLifecycleMonitorRegistry
 import androidx.test.runner.lifecycle.Stage
@@ -41,7 +38,7 @@ class UserActivityTest {
         assert(activityChecker()?.javaClass == MainActivity::class.java)
         onView(withId(R.id.etfirst_insert_word))
             .perform(typeText("suitmedia"))
-        onView(ViewMatchers.isRoot()).perform(ViewActions.closeSoftKeyboard())
+        onView(ViewMatchers.isRoot()).perform(closeSoftKeyboard())
 
         onView(withId(R.id.btnfirst_check_palindrome))
             .check(matches(ViewMatchers.isDisplayed()))
@@ -55,10 +52,9 @@ class UserActivityTest {
         onView(withText("yes"))
             .perform(click())
 
-
         onView(withId(R.id.etfirst_insert_word))
             .perform(replaceText("kasur rusak"))
-        onView(ViewMatchers.isRoot()).perform(ViewActions.closeSoftKeyboard())
+        onView(ViewMatchers.isRoot()).perform(closeSoftKeyboard())
 
         onView(withId(R.id.btnfirst_check_palindrome))
             .perform(click())
@@ -73,7 +69,7 @@ class UserActivityTest {
 
         onView(withId(R.id.etfirst_insert_name))
             .perform(typeText("nametest"))
-        onView(ViewMatchers.isRoot()).perform(ViewActions.closeSoftKeyboard())
+        onView(ViewMatchers.isRoot()).perform(closeSoftKeyboard())
 
         onView(withId(R.id.btnfirst_check_next))
             .perform(click())

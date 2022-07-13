@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@drawable/firstbg"
     tools:context=".presentation.first.MainActivity">
 
     <ImageView
@@ -14,12 +14,12 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="136dp"
         android:layout_marginEnd="20dp"
+        android:contentDescription="@string/photoProfile"
         android:src="@drawable/ic_photoprofile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/photoProfile" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etfirst_insert_name"
@@ -55,14 +55,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etfirst_insert_name" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnfirst_check_palindrome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="#2B637B"
+        android:background="@drawable/bg_button"
         android:fontFamily="@font/poppinsmedium"
         android:includeFontPadding="false"
         android:text="@string/Chekckusername"
@@ -73,14 +73,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etfirst_insert_word" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnfirst_check_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="#2B637B"
+        android:background="@drawable/bg_button"
         android:fontFamily="@font/poppinsmedium"
         android:includeFontPadding="false"
         android:text="@string/Next"

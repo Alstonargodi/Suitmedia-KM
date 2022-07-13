@@ -11,15 +11,15 @@ import com.example.suitmedia_km_test.data.local.entity.user.User
 @Dao
 interface LocalDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract fun insertUserName(data : User)
+    fun insertUserName(data : User)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract fun insertNameTaken(data : NameTaken)
+    fun insertNameTaken(data : NameTaken)
 
     @Query("select*from UserTable")
-    abstract fun readUserName(): LiveData<User>
+    fun readUserName(): LiveData<User>
 
     @Query("select*from NamePickTable")
-    abstract fun readNameTaken(): LiveData<NameTaken>
+    fun readNameTaken(): LiveData<NameTaken>
 
 }

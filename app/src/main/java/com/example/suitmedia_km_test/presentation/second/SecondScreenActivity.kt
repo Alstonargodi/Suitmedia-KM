@@ -43,7 +43,9 @@ class SecondScreenActivity : AppCompatActivity() {
 
     private fun showCurrentUser(){
         viewModel.readUserName().observe(this){ respon ->
-            binding.tvSecondUsername.text = respon.name
+            if (respon != null){
+                binding.tvSecondUsername.text = respon.name
+            }
         }
     }
 
