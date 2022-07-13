@@ -21,14 +21,12 @@ class RemotePagingMediator(
                val remoteKeys = getRemoteKeyClosestToCurrentPosition(state)
                remoteKeys?.nextKey?.minus(1) ?: initialPage
            }
-
            LoadType.PREPEND -> {
                val remoteKeys = getRemoteKeyFirstItem(state)
                val prevKey = remoteKeys?.prevKey
                    ?: return MediatorResult.Success(endOfPaginationReached = remoteKeys != null)
                prevKey
            }
-
            LoadType.APPEND -> {
                val remoteKeys = getRemoteKeyLastItem(state)
                val nextKey = remoteKeys?.nextKey

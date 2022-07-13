@@ -18,7 +18,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/photoProfile" />
 
     <EditText
         android:id="@+id/etfirst_insert_name"
@@ -29,7 +30,7 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/bg_white"
         android:fontFamily="@font/poppinsmedium"
-        android:hint="Name"
+        android:hint="@string/Name"
         android:includeFontPadding="false"
         android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +47,7 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/bg_white"
         android:fontFamily="@font/poppinsmedium"
-        android:hint="Palindrome"
+        android:hint="@string/Palindrome"
         android:includeFontPadding="false"
         android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +65,7 @@
         android:background="#2B637B"
         android:fontFamily="@font/poppinsmedium"
         android:includeFontPadding="false"
-        android:text="Check"
+        android:text="@string/Chekckusername"
         android:textColor="#FBF5F5"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,7 +83,7 @@
         android:background="#2B637B"
         android:fontFamily="@font/poppinsmedium"
         android:includeFontPadding="false"
-        android:text="Next"
+        android:text="@string/Next"
         android:textColor="#ECDADA"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

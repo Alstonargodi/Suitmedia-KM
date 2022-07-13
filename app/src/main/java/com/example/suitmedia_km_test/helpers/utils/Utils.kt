@@ -1,4 +1,4 @@
-package com.example.suitmedia_km_test.helpers
+package com.example.suitmedia_km_test.helpers.utils
 
 object Utils {
     fun palindromeChecker(word : String): Boolean{
