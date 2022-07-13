@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.suitmedia_km_test.R
 import com.example.suitmedia_km_test.databinding.ActivityThirdScreenBinding
+import com.example.suitmedia_km_test.helpers.paging.LoadingStateAdapter
 import com.example.suitmedia_km_test.presentation.third.adapter.UsersRecyclerViewAdapter
 import com.example.suitmedia_km_test.presentation.viewmodel.ViewModelFactory
 import kotlinx.coroutines.launch
@@ -22,14 +23,22 @@ class ThirdScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         showUserList()
+
+        binding.swipeRefreshThrid.setOnRefreshListener {
+            showUserList()
+        }
     }
 
 
     private fun showUserList(){
         viewModel.getUsersList().observe(this){response->
+            val recyclerView = binding.recyclerViewThird
             val adapter = UsersRecyclerViewAdapter()
-            binding.recyclerViewThird.adapter = adapter
-            binding.recyclerViewThird.layoutManager = LinearLayoutManager(this)
+            recyclerView.adapter = adapter
+            recyclerView.layoutManager = LinearLayoutManager(this)
+            recyclerView.adapter = adapter.withLoadStateFooter(
+                LoadingStateAdapter{ adapter.retry()}
+            )
             lifecycleScope.launch {
                 adapter.submitData(response)
             }

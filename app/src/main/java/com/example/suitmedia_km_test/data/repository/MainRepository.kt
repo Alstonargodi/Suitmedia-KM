@@ -7,7 +7,6 @@ import com.example.suitmedia_km_test.data.local.entity.user.NameTaken
 import com.example.suitmedia_km_test.data.local.entity.user.User
 import com.example.suitmedia_km_test.data.remote.Data
 import com.example.suitmedia_km_test.data.remote.service.ApiService
-import com.example.suitmedia_km_test.helpers.paging.RemotePaging
 import com.example.suitmedia_km_test.helpers.paging.RemotePagingMediator
 import java.util.concurrent.Executors
 
@@ -33,7 +32,7 @@ class MainRepository(
     @OptIn(ExperimentalPagingApi::class)
     fun getUsersList(): LiveData<PagingData<Data>>{
         return Pager(
-            config = PagingConfig(5, enablePlaceholders = true),
+            config = PagingConfig(2, enablePlaceholders = true),
             remoteMediator = RemotePagingMediator(localDatabase,apiService),
             pagingSourceFactory = { localDatabase.remoteDao().readUsersList() }
         ).liveData
